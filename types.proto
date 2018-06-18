@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package dippa;
+
+message User {
+  string username = 1;
+  string room = 2;
+}
+
+message Emotion {
+  float sadness = 1;
+  float joy = 2;
+  float fear = 3;
+  float disgust = 4;
+  float anger = 5;
+}
+
+message WatsonNLP {
+
+  message Keyword {
+    string contents = 1;
+    float sentiment = 2;
+    float relevance = 3;
+    Emotion emotion = 4;
+  }
+
+  string contents = 1;
+  google.protobuf.Timestamp created_at = 2;
+  User user = 3;
+  repeated Keyword keywords = 4;
+}
