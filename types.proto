@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-package dippa;
+package types;
 
 message User {
   string username = 1;
@@ -15,6 +15,11 @@ message Emotion {
   float fear = 3;
   float disgust = 4;
   float anger = 5;
+}
+
+message ProcessingData {
+  User user = 1;
+  bytes contents = 2;
 }
 
 message WatsonNLP {
