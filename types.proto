@@ -36,3 +36,10 @@ message WatsonNLP {
   User user = 3;
   repeated Keyword keywords = 4;
 }
+
+message GoogleFacialRecognition {
+  Emotion emotion = 1;
+  bytes image = 2;
+  google.protobuf.Timestamp created_at = 3;
+  User user = 4;
+}

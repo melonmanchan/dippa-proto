@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='types',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0btypes.proto\x12\x05types\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04room\x18\x02 \x01(\t\"U\n\x07\x45motion\x12\x0f\n\x07sadness\x18\x01 \x01(\x02\x12\x0b\n\x03joy\x18\x02 \x01(\x02\x12\x0c\n\x04\x66\x65\x61r\x18\x03 \x01(\x02\x12\x0f\n\x07\x64isgust\x18\x04 \x01(\x02\x12\r\n\x05\x61nger\x18\x05 \x01(\x02\"=\n\x0eProcessingData\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.types.User\x12\x10\n\x08\x63ontents\x18\x02 \x01(\x0c\"\xf8\x01\n\tWatsonNLP\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.types.User\x12*\n\x08keywords\x18\x04 \x03(\x0b\x32\x18.types.WatsonNLP.Keyword\x1a\x62\n\x07Keyword\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12\x11\n\tsentiment\x18\x02 \x01(\x02\x12\x11\n\trelevance\x18\x03 \x01(\x02\x12\x1f\n\x07\x65motion\x18\x04 \x01(\x0b\x32\x0e.types.Emotionb\x06proto3')
+  serialized_pb=_b('\n\x0btypes.proto\x12\x05types\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04room\x18\x02 \x01(\t\"U\n\x07\x45motion\x12\x0f\n\x07sadness\x18\x01 \x01(\x02\x12\x0b\n\x03joy\x18\x02 \x01(\x02\x12\x0c\n\x04\x66\x65\x61r\x18\x03 \x01(\x02\x12\x0f\n\x07\x64isgust\x18\x04 \x01(\x02\x12\r\n\x05\x61nger\x18\x05 \x01(\x02\"=\n\x0eProcessingData\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.types.User\x12\x10\n\x08\x63ontents\x18\x02 \x01(\x0c\"\xf8\x01\n\tWatsonNLP\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.types.User\x12*\n\x08keywords\x18\x04 \x03(\x0b\x32\x18.types.WatsonNLP.Keyword\x1a\x62\n\x07Keyword\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12\x11\n\tsentiment\x18\x02 \x01(\x02\x12\x11\n\trelevance\x18\x03 \x01(\x02\x12\x1f\n\x07\x65motion\x18\x04 \x01(\x0b\x32\x0e.types.Emotion\"\x94\x01\n\x17GoogleFacialRecognition\x12\x1f\n\x07\x65motion\x18\x01 \x01(\x0b\x32\x0e.types.Emotion\x12\r\n\x05image\x18\x02 \x01(\x0c\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x04 \x01(\x0b\x32\x0b.types.Userb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -264,16 +264,72 @@ _WATSONNLP = _descriptor.Descriptor(
   serialized_end=494,
 )
 
+
+_GOOGLEFACIALRECOGNITION = _descriptor.Descriptor(
+  name='GoogleFacialRecognition',
+  full_name='types.GoogleFacialRecognition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='emotion', full_name='types.GoogleFacialRecognition.emotion', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='image', full_name='types.GoogleFacialRecognition.image', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='types.GoogleFacialRecognition.created_at', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='types.GoogleFacialRecognition.user', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=497,
+  serialized_end=645,
+)
+
 _PROCESSINGDATA.fields_by_name['user'].message_type = _USER
 _WATSONNLP_KEYWORD.fields_by_name['emotion'].message_type = _EMOTION
 _WATSONNLP_KEYWORD.containing_type = _WATSONNLP
 _WATSONNLP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _WATSONNLP.fields_by_name['user'].message_type = _USER
 _WATSONNLP.fields_by_name['keywords'].message_type = _WATSONNLP_KEYWORD
+_GOOGLEFACIALRECOGNITION.fields_by_name['emotion'].message_type = _EMOTION
+_GOOGLEFACIALRECOGNITION.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_GOOGLEFACIALRECOGNITION.fields_by_name['user'].message_type = _USER
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Emotion'] = _EMOTION
 DESCRIPTOR.message_types_by_name['ProcessingData'] = _PROCESSINGDATA
 DESCRIPTOR.message_types_by_name['WatsonNLP'] = _WATSONNLP
+DESCRIPTOR.message_types_by_name['GoogleFacialRecognition'] = _GOOGLEFACIALRECOGNITION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
@@ -311,6 +367,13 @@ WatsonNLP = _reflection.GeneratedProtocolMessageType('WatsonNLP', (_message.Mess
   ))
 _sym_db.RegisterMessage(WatsonNLP)
 _sym_db.RegisterMessage(WatsonNLP.Keyword)
+
+GoogleFacialRecognition = _reflection.GeneratedProtocolMessageType('GoogleFacialRecognition', (_message.Message,), dict(
+  DESCRIPTOR = _GOOGLEFACIALRECOGNITION,
+  __module__ = 'types_pb2'
+  # @@protoc_insertion_point(class_scope:types.GoogleFacialRecognition)
+  ))
+_sym_db.RegisterMessage(GoogleFacialRecognition)
 
 
 # @@protoc_insertion_point(module_scope)
