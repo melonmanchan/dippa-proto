@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 set -e
+mkdir -p build/python
+mkdir -p build/go
 protoc types.proto --go_out=build/go --python_out=build/python
 
 cp build/python/types_pb2.py ../dippa-nlp

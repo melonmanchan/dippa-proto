@@ -19,10 +19,11 @@ message Emotion {
 
 message GoogleEmotion {
   float detection_confidence = 1;
-  float blurred = 2;
-  float joy = 3;
-  float sorrow = 4;
-  float surprise = 5;
+  float anger = 2;
+  float blurred = 3;
+  float joy = 4;
+  float sorrow = 5;
+  float surprise = 6;
 }
 
 message ProcessingData {
