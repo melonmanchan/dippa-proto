@@ -17,6 +17,15 @@ message Emotion {
   float anger = 5;
 }
 
+message GoogleEmotion {
+  float detection_confidence = 1;
+  float anger = 2;
+  float blurred = 3;
+  float joy = 4;
+  float sorrow = 5;
+  float surprise = 6;
+}
+
 message ProcessingData {
   User user = 1;
   bytes contents = 2;
@@ -38,7 +47,7 @@ message WatsonNLP {
 }
 
 message GoogleFacialRecognition {
-  Emotion emotion = 1;
+  GoogleEmotion emotion = 1;
   bytes image = 2;
   google.protobuf.Timestamp created_at = 3;
   User user = 4;

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='types',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0btypes.proto\x12\x05types\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04room\x18\x02 \x01(\t\"U\n\x07\x45motion\x12\x0f\n\x07sadness\x18\x01 \x01(\x02\x12\x0b\n\x03joy\x18\x02 \x01(\x02\x12\x0c\n\x04\x66\x65\x61r\x18\x03 \x01(\x02\x12\x0f\n\x07\x64isgust\x18\x04 \x01(\x02\x12\r\n\x05\x61nger\x18\x05 \x01(\x02\"=\n\x0eProcessingData\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.types.User\x12\x10\n\x08\x63ontents\x18\x02 \x01(\x0c\"\xf8\x01\n\tWatsonNLP\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.types.User\x12*\n\x08keywords\x18\x04 \x03(\x0b\x32\x18.types.WatsonNLP.Keyword\x1a\x62\n\x07Keyword\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12\x11\n\tsentiment\x18\x02 \x01(\x02\x12\x11\n\trelevance\x18\x03 \x01(\x02\x12\x1f\n\x07\x65motion\x18\x04 \x01(\x0b\x32\x0e.types.Emotion\"\x94\x01\n\x17GoogleFacialRecognition\x12\x1f\n\x07\x65motion\x18\x01 \x01(\x0b\x32\x0e.types.Emotion\x12\r\n\x05image\x18\x02 \x01(\x0c\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x04 \x01(\x0b\x32\x0b.types.Userb\x06proto3')
+  serialized_pb=_b('\n\x0btypes.proto\x12\x05types\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04room\x18\x02 \x01(\t\"U\n\x07\x45motion\x12\x0f\n\x07sadness\x18\x01 \x01(\x02\x12\x0b\n\x03joy\x18\x02 \x01(\x02\x12\x0c\n\x04\x66\x65\x61r\x18\x03 \x01(\x02\x12\x0f\n\x07\x64isgust\x18\x04 \x01(\x02\x12\r\n\x05\x61nger\x18\x05 \x01(\x02\"|\n\rGoogleEmotion\x12\x1c\n\x14\x64\x65tection_confidence\x18\x01 \x01(\x02\x12\r\n\x05\x61nger\x18\x02 \x01(\x02\x12\x0f\n\x07\x62lurred\x18\x03 \x01(\x02\x12\x0b\n\x03joy\x18\x04 \x01(\x02\x12\x0e\n\x06sorrow\x18\x05 \x01(\x02\x12\x10\n\x08surprise\x18\x06 \x01(\x02\"=\n\x0eProcessingData\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.types.User\x12\x10\n\x08\x63ontents\x18\x02 \x01(\x0c\"\xf8\x01\n\tWatsonNLP\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.types.User\x12*\n\x08keywords\x18\x04 \x03(\x0b\x32\x18.types.WatsonNLP.Keyword\x1a\x62\n\x07Keyword\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x12\x11\n\tsentiment\x18\x02 \x01(\x02\x12\x11\n\trelevance\x18\x03 \x01(\x02\x12\x1f\n\x07\x65motion\x18\x04 \x01(\x0b\x32\x0e.types.Emotion\"\x9a\x01\n\x17GoogleFacialRecognition\x12%\n\x07\x65motion\x18\x01 \x01(\x0b\x32\x14.types.GoogleEmotion\x12\r\n\x05image\x18\x02 \x01(\x0c\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x04user\x18\x04 \x01(\x0b\x32\x0b.types.Userb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -124,6 +124,72 @@ _EMOTION = _descriptor.Descriptor(
 )
 
 
+_GOOGLEEMOTION = _descriptor.Descriptor(
+  name='GoogleEmotion',
+  full_name='types.GoogleEmotion',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='detection_confidence', full_name='types.GoogleEmotion.detection_confidence', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='anger', full_name='types.GoogleEmotion.anger', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='blurred', full_name='types.GoogleEmotion.blurred', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='joy', full_name='types.GoogleEmotion.joy', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sorrow', full_name='types.GoogleEmotion.sorrow', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='surprise', full_name='types.GoogleEmotion.surprise', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=182,
+  serialized_end=306,
+)
+
+
 _PROCESSINGDATA = _descriptor.Descriptor(
   name='ProcessingData',
   full_name='types.ProcessingData',
@@ -157,8 +223,8 @@ _PROCESSINGDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=182,
-  serialized_end=243,
+  serialized_start=308,
+  serialized_end=369,
 )
 
 
@@ -209,8 +275,8 @@ _WATSONNLP_KEYWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=494,
+  serialized_start=522,
+  serialized_end=620,
 )
 
 _WATSONNLP = _descriptor.Descriptor(
@@ -260,8 +326,8 @@ _WATSONNLP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=246,
-  serialized_end=494,
+  serialized_start=372,
+  serialized_end=620,
 )
 
 
@@ -312,8 +378,8 @@ _GOOGLEFACIALRECOGNITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=497,
-  serialized_end=645,
+  serialized_start=623,
+  serialized_end=777,
 )
 
 _PROCESSINGDATA.fields_by_name['user'].message_type = _USER
@@ -322,11 +388,12 @@ _WATSONNLP_KEYWORD.containing_type = _WATSONNLP
 _WATSONNLP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _WATSONNLP.fields_by_name['user'].message_type = _USER
 _WATSONNLP.fields_by_name['keywords'].message_type = _WATSONNLP_KEYWORD
-_GOOGLEFACIALRECOGNITION.fields_by_name['emotion'].message_type = _EMOTION
+_GOOGLEFACIALRECOGNITION.fields_by_name['emotion'].message_type = _GOOGLEEMOTION
 _GOOGLEFACIALRECOGNITION.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GOOGLEFACIALRECOGNITION.fields_by_name['user'].message_type = _USER
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Emotion'] = _EMOTION
+DESCRIPTOR.message_types_by_name['GoogleEmotion'] = _GOOGLEEMOTION
 DESCRIPTOR.message_types_by_name['ProcessingData'] = _PROCESSINGDATA
 DESCRIPTOR.message_types_by_name['WatsonNLP'] = _WATSONNLP
 DESCRIPTOR.message_types_by_name['GoogleFacialRecognition'] = _GOOGLEFACIALRECOGNITION
@@ -345,6 +412,13 @@ Emotion = _reflection.GeneratedProtocolMessageType('Emotion', (_message.Message,
   # @@protoc_insertion_point(class_scope:types.Emotion)
   ))
 _sym_db.RegisterMessage(Emotion)
+
+GoogleEmotion = _reflection.GeneratedProtocolMessageType('GoogleEmotion', (_message.Message,), dict(
+  DESCRIPTOR = _GOOGLEEMOTION,
+  __module__ = 'types_pb2'
+  # @@protoc_insertion_point(class_scope:types.GoogleEmotion)
+  ))
+_sym_db.RegisterMessage(GoogleEmotion)
 
 ProcessingData = _reflection.GeneratedProtocolMessageType('ProcessingData', (_message.Message,), dict(
   DESCRIPTOR = _PROCESSINGDATA,
